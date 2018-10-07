@@ -91,6 +91,10 @@ void   operator-- (matrix& mat)    	// Sub 1 from each element --mat
 }
 istream& operator>> (istream& in, matrix& mat){
     in>> mat.row >> mat.col ;
+    mat.data = new int* [mat.row];
+    for (int i=0; i<mat.row; i++)
+        mat.data[i] = new int[mat.col];
+
     for (int i=0; i<mat.row; i++)
         for (int j=0; j<mat.col; j++)
             in >> mat.data[i][j];
