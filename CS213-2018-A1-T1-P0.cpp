@@ -40,7 +40,7 @@ matrix operator+= (matrix& mat1, matrix mat2) // mat1 changes & return
 
     for (int i=0 ; i<mat1.row ; i++){
         for(int j=0 ; j<mat1.col ; j++){
-            mat1[i][j] = mat1[i][j] + mat2[i][j];
+            mat1.data[i][j] = mat1.data[i][j] + mat2.data[i][j];
         }
     }
     return mat1;
@@ -50,7 +50,7 @@ matrix operator-= (matrix& mat1, matrix mat2); // mat1 changes + return new
 
     for (int i=0 ; i<mat1.row ; i++){
         for(int j=0 ; j<mat1.col ; j++){
-            mat1[i][j] = mat1[i][j] - mat2[i][j];
+            mat1.data[i][j] = mat1.data[i][j] - mat2.data[i][j];
         }
     }
     return mat1;
@@ -59,7 +59,7 @@ matrix operator+= (matrix& mat, int scalar)   // change mat & return new matrix
 {
     for (int i=0 ; i<mat.row ; i++){
         for(int j=0 ; j<mat.col ; j++){
-            mat[i][j] = mat[i][j] + scalar;
+            mat.data[i][j] = mat.data[i][j] + scalar;
         }
     }
     return mat;
@@ -68,24 +68,24 @@ matrix operator-= (matrix& mat, int scalar)  // change mat & return new matrix
 {
      for (int i=0 ; i<mat.row ; i++){
         for(int j=0 ; j<mat.col ; j++){
-            mat[i][j] = mat[i][j] + scalar;
+            mat.data[i][j] = mat.data[i][j] + scalar;
         }
     }
     return mat;
 }
 void   operator++ (matrix& mat)   	// Add 1 to each element ++mat
 {
-    for (int i=0 ; i<mat1.row ; i++){
-        for(int j=0 ; j<mat1.col ; j++){
-            mat[i][j] = mat[i][j] + 1;
+    for (int i=0 ; i<mat.row ; i++){
+        for(int j=0 ; j<mat.col ; j++){
+            mat.data[i][j] = mat.data[i][j] + 1;
         }
     }
 }
 void   operator-- (matrix& mat)    	// Sub 1 from each element --mat
 {
-      for (int i=0 ; i<mat1.row ; i++){
-        for(int j=0 ; j<mat1.col ; j++){
-            mat[i][j] = mat[i][j] - 1;
+      for (int i=0 ; i<mat.row ; i++){
+        for(int j=0 ; j<mat.col ; j++){
+            mat.data[i][j] = mat.data[i][j] - 1;
         }
     }
 }
