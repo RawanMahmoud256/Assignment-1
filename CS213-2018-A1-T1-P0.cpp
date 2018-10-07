@@ -68,7 +68,7 @@ matrix operator-= (matrix& mat, int scalar)  // change mat & return new matrix
 {
      for (int i=0 ; i<mat.row ; i++){
         for(int j=0 ; j<mat.col ; j++){
-            mat.data[i][j] = mat.data[i][j] + scalar;
+            mat.data[i][j] = mat.data[i][j] - scalar;
         }
     }
     return mat;
